@@ -1,7 +1,37 @@
 # Video editing skills
 
 Claude Code loads these automatically from `.claude/skills/` when you work in this repo.
-They are copied unmodified from the vendors' official repositories.
+Third-party skills are copied unmodified from their repositories (only `.git`, CI files and README demo GIFs left out).
+
+## The 5 skills from "5 Claude Video Editing Skills" (Higgsfield blog, @davidho)
+
+| # | Skill folder | Job | Source |
+|---|---|---|---|
+| 1 | `ghost-editor` | Polish talking-head footage into a vertical reel: best takes, captions clear of the face, graphics, SFX | [kurbaitaev/ghost-editor](https://github.com/kurbaitaev/ghost-editor) @ `ce17272` (MIT) |
+| 2 | `ffmpeg-skill` | 42 local FFmpeg tools: cut pauses, captions, reframe, loudness, exports | [kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) @ `f1c97cb` (MIT) |
+| 3 | `editorial-motion-graphics` | Explainer from an idea via Higgsfield (connector `https://mcp.higgsfield.ai/mcp`) | [skill page](https://higgsfield.ai/skills/editorial-motion-graphics) (setup notes written here) |
+| 4 | `shorts` (`/shorts`) | Long video → scored short clips with Remotion captions | [AgriciDaniel/claude-shorts](https://github.com/AgriciDaniel/claude-shorts) @ `a369fad` (MIT) |
+| 5 | `openmontage` | Build original videos from a reference's structure | [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) (AGPL-3.0; setup skill only, the project is cloned separately) |
+
+Setup per skill (from the article):
+
+1. **Ghost Editor** – built and tested on Apple-silicon Macs. Run `bash .claude/skills/ghost-editor/scripts/doctor.sh`, fix each `MISS`, then `python3 .claude/skills/ghost-editor/scripts/library_restore.py` (~60 MB of SFX/music/emoji). Optional Gemini key in `.claude/skills/ghost-editor/.env` for reference-video analysis and visual checks.
+2. **FFmpeg Skill** – needs FFmpeg, ffprobe and Python 3.10+. Check with `python3 .claude/skills/ffmpeg-skill/scripts/_contract.py doctor`. Transcription needs a local engine (`pip install faster-whisper`) or an existing transcript.
+3. **Editorial Motion Graphics** – add the Higgsfield connector in Claude (Customize → Connectors) and sign in; uses Higgsfield credits.
+4. **Claude Shorts** – run `bash .claude/skills/shorts/setup.sh` (faster-whisper, Remotion deps), start a new session, type `/shorts`. Windows needs WSL 2.
+5. **OpenMontage** – `git clone https://github.com/calesthio/OpenMontage.git ~/OpenMontage && cd ~/OpenMontage && make setup`, then open that folder in Claude Code.
+
+Prompts from the article:
+
+1. "Edit my talking-head recording into a 30–45-second vertical reel in the clean style. Select the strongest takes, remove repeated lines, keep captions clear of my face, and use restrained graphics and sound effects. Show me the edit plan before rendering."
+2. "Remove long pauses from my video without cutting words. Make a 9:16 version with the speaker in frame, add readable subtitles, and balance speech loudness. Export a new MP4 and check the duration, framing, captions, and audio. Keep the original file."
+3. "Create a 30-second vertical explainer about [topic] in an editorial motion graphics style. Use these source facts: [facts]. Build a clear hook, three visual beats, English voiceover, and readable subtitles. Show me the script and scene plan before generation."
+4. "Find three self-contained clips from this recording, around 30–60 seconds each. Show the timecodes, opening hook, and reason for each choice. After I choose, render 9:16 versions with Clean captions for Instagram Reels. Keep the original meaning."
+5. "Analyze this reference's hook, pacing, and editing structure. Propose three original 45-second videos about [my topic] using my own content. Keep the useful storytelling principles, with new wording and visuals. Show the plan, required tools, cost estimate, and a sample before full production."
+
+Tip from the article: start with one short test, review the first export at normal speed (cut points, caption accuracy, face visibility, audio), and keep revisions specific.
+
+## Other video skills
 
 | Skill | What it does | Source |
 |---|---|---|
