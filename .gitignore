@@ -1,0 +1,7 @@
+# video skill jobs: inputs, intermediate data and renders
+work/
+# fonts are fetched from npm by video-core/scripts/fonts.sh
+.claude/skills/video-core/fonts/*
+!.claude/skills/video-core/fonts/.gitkeep
+node_modules/
+__pycache__/
