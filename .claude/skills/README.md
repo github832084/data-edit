@@ -88,3 +88,27 @@ render and never overwrites files without asking.
 | Gemini / Flow assets | miniature-painting-lyrics, crayon-rain-lyrics, split-screen-ldr-lyrics, one-take-forest-lyrics, sketch-doodle-edit, crayon-carousel |
 | Beat & photo edits | beat-transition-edit, scribble-edit, flicker-edit, painted-beat-edit, sketch-to-motion, shutter-stack |
 | Talking head | talking-head-edit, personal-short-form-reels, personal-broll-library, depth-ui-reel, youtube-clips, educational-youtube-editor, ranking-format, business-short-form-reels, match-cut, led-matrix-text, glass-stat-card, particle-chart, particle-text, price-tag-zoom, podcast-reel-edit, dark-red-timeline-motion-graphics, instagram-ui-hinglish, hindi-pastel-reel-edit, kinetic-talking-head-edit, red-kinetic-collage-edit, iphone-style-by-aansh, rgb-glitch-live, magazine-cover, comic-halftone, breaking-news, neon-outline, cinema-scope, triptych-timecode |
+
+## Instagram Agent Skill (13 skills)
+
+Copied unmodified from [Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) @ `d03c56b` (MIT), using the guide's "project only" method.
+
+| Skill | Job |
+|---|---|
+| `ig-reel` | Three scored hooks, the script, on-screen text and a timed beat sheet |
+| `ig-viral` | What works in your niche, ranked by each account's own median |
+| `ig-caption` | The caption, linted, with the 125-character feed preview |
+| `ig-carousel` | Cover, slide copy and 1080×1350 slides |
+| `ig-story` | The day's story sequence and stickers |
+| `ig-profile` | Profile score out of 100 and a rewrite |
+| `ig-plan` | The week's posts, formats, times and accounts to engage with |
+| `ig-human` | Strips em dashes, slop words and invisible characters, then scores the draft |
+| `ig-comment` | Comments on other people's posts |
+| `ig-reply` | Replies to your own comments, in priority order |
+| `ig-dm` | Keyword delivery, first message, collab pitch and follow-ups |
+| `ig-repurpose` | One video or newsletter into a week of posts |
+| `ig-audit` | Post-mortem on your insights |
+
+Nothing is posted, commented or sent for you; every skill ends in copy-ready text.
+The skills share `~/.claude/instagram/` (`voice.md`, `swipe.md`, `plan.md`, `log.md`). The voice template is in `ig-reel/templates/voice.md`.
+In a cloud session that folder is lost when the session ends, so keep your filled-in `voice.md` in the repo and copy it there at the start.
