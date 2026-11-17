@@ -1,0 +1,236 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Tiro;src:url(../../.claude/skills/video-core/fonts/tiro-devanagari-hindi/files/tiro-devanagari-hindi-devanagari-400-normal.woff2)}
+@font-face{font-family:Tiro;src:url(../../.claude/skills/video-core/fonts/tiro-devanagari-hindi/files/tiro-devanagari-hindi-latin-400-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:TiroI;src:url(../../.claude/skills/video-core/fonts/tiro-devanagari-hindi/files/tiro-devanagari-hindi-latin-400-italic.woff2)}
+@font-face{font-family:Corm;src:url(../../.claude/skills/video-core/fonts/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2)}
+@font-face{font-family:CormI;src:url(../../.claude/skills/video-core/fonts/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2)}
+@font-face{font-family:Yatra;src:url(../../.claude/skills/video-core/fonts/yatra-one/files/yatra-one-devanagari-400-normal.woff2)}
+@font-face{font-family:Kalam;src:url(../../.claude/skills/video-core/fonts/kalam/files/kalam-devanagari-700-normal.woff2)}
+@font-face{font-family:Kalam;src:url(../../.claude/skills/video-core/fonts/kalam/files/kalam-latin-700-normal.woff2);unicode-range:U+0000-00FF}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+.f{position:relative;width:1080px;height:1920px;overflow:hidden;display:none}
+.on{display:block}
+svg.bg{position:absolute;inset:0}
+.top{position:absolute;top:130px;width:100%;text-align:center}
+.sub{position:absolute;bottom:250px;left:40px;right:40px;text-align:center;font-family:Tiro;font-size:50px;line-height:1.35}
+.card{position:absolute;left:90px;right:90px;top:1080px;text-align:center;padding:44px 40px}
+.card .sk{font-family:Tiro;font-size:96px;line-height:1.1}
+.card .iast{font-family:CormI;font-size:46px;margin-top:10px}
+.card .hi{font-family:Tiro;font-size:42px;margin-top:22px}
+.card .src{font-family:Corm;font-size:30px;letter-spacing:6px;margin-top:22px;text-transform:uppercase}
+.tag{position:absolute;top:40px;right:44px;font-family:Corm;font-size:26px;letter-spacing:4px;opacity:.7}
+
+/* A gold on black */
+#A{background:radial-gradient(ellipse at 50% 32%,#2a1f0c 0%,#0b0905 55%,#050403 100%);color:#e9c46a}
+#A .top{font-family:Tiro;font-size:58px;color:#f1d38a;letter-spacing:2px}
+#A .top small{display:block;font-family:Corm;font-size:28px;letter-spacing:10px;color:#a8894a;margin-top:10px}
+#A .card .sk{color:#f4d27a;text-shadow:0 0 28px rgba(244,190,90,.55)}
+#A .card .iast,#A .card .src{color:#b4975a}
+#A .card .hi{color:#efe3c4}
+#A .sub{font-family:CormI,Tiro;color:#efe6cf;font-size:44px}
+#A .sub b{color:#f4c35a;font-weight:400}
+
+/* B shadow puppet */
+#B{background:#1a0d06;color:#3a1d0c}
+#B .top{font-family:Yatra;font-size:64px;color:#f6d9a0;text-shadow:0 3px 0 #5a2a0e}
+#B .card{background:linear-gradient(#7a4421,#5a2f15);border:6px solid #3a1d0c;border-radius:10px;box-shadow:0 14px 40px rgba(0,0,0,.6),inset 0 0 0 3px #a8673a;color:#f7e2bb;top:300px}
+#B .card .sk{font-family:Yatra;color:#ffe3a3}
+#B .card .iast{color:#e9c58e}
+#B .card .src{color:#e0b77a}
+#B .sub{color:#fbe7c1;background:rgba(20,8,2,.72);padding:22px 30px;border-radius:8px;bottom:90px}
+
+/* C flat cartoon */
+#C{background:#1c1838;color:#fff}
+#C .top{font-family:Kalam;font-size:62px;color:#ffd166}
+#C .card{background:#fff8e7;border-radius:28px;color:#2b2140;top:330px;box-shadow:0 12px 0 #c9a227}
+#C .card .sk{font-family:Kalam;font-size:92px;color:#e4572e}
+#C .card .iast{color:#6b5d86}
+#C .card .src{color:#2a9d8f;font-family:Kalam;letter-spacing:2px;text-transform:none;font-size:34px}
+#C .sub{font-family:Kalam;font-size:50px;color:#fff;background:#0f0c22;left:0;right:0;bottom:0;padding:40px 70px 120px}
+#C .sub b{color:#ffd166;font-weight:700}
+
+/* D watercolour */
+#D{background:#f3ead6;color:#2f2a24}
+#D .top{font-family:Tiro;font-size:60px;color:#3b2f22}
+#D .top small{display:block;font-family:Corm;font-size:28px;letter-spacing:10px;color:#8a6e4b;margin-top:10px}
+#D .card{top:1130px}
+#D .card .sk{color:#7c2d12}
+#D .card .iast{color:#7a6650}
+#D .card .hi{color:#3b2f22}
+#D .card .src{color:#8a6e4b}
+#D .card:before,#D .card:after{content:"";position:absolute;left:25%;right:25%;height:2px;background:#b08a5a}
+#D .card:before{top:10px}#D .card:after{bottom:10px}
+#D .sub{color:#2f2a24;font-size:44px}
+#D .sub b{color:#9a3412;font-weight:400}
+</style></head><body>
+
+<!-- ================= A: GOLD LINE ART ON BLACK ================= -->
+<div class="f" id="A">
+<svg class="bg" viewBox="0 0 1080 1920">
+ <defs>
+  <filter id="glowA" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2c4"/><stop offset=".55" stop-color="#e9b85a"/><stop offset="1" stop-color="#e9b85a" stop-opacity="0"/></radialGradient>
+ </defs>
+ <circle cx="540" cy="560" r="250" fill="url(#moon)" opacity=".55"/>
+ <circle cx="540" cy="560" r="150" fill="none" stroke="#e9c46a" stroke-width="2" opacity=".6"/>
+ <!-- mountains -->
+ <g fill="none" stroke="#d9b45e" stroke-width="3" filter="url(#glowA)" stroke-linejoin="round">
+  <path d="M60 900 L250 690 L330 760 L470 600 L560 700 L640 640 L780 780 L860 720 L1020 900"/>
+  <path d="M300 780 L360 820 M470 600 L450 690 M640 640 L660 720 M780 780 L800 830" opacity=".6"/>
+ </g>
+ <!-- seated scholar with palm leaf -->
+ <g fill="none" stroke="#f0cf7e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowA)" transform="translate(300,770)">
+  <circle cx="0" cy="0" r="34"/>
+  <path d="M-10 -34 Q0 -60 14 -36"/>
+  <path d="M0 34 L0 60 M-48 70 Q0 52 48 70 L60 170 L-60 170 Z"/>
+  <path d="M-90 220 Q-40 180 0 196 Q40 180 90 220 Q0 246 -90 220 Z"/>
+  <path d="M48 90 Q120 120 160 150 M-48 90 Q-20 140 30 150"/>
+ </g>
+ <g fill="none" stroke="#f0cf7e" stroke-width="3" filter="url(#glowA)" transform="translate(470,905) rotate(-8)">
+  <path d="M0 0 Q160 -40 330 0 Q160 40 0 0 Z"/>
+  <path d="M40 -6 L290 -6 M40 6 L290 6 M60 -16 L270 -16 M60 16 L270 16" opacity=".55"/>
+ </g>
+ <!-- oil lamp -->
+ <g transform="translate(820,960)" filter="url(#glowA)">
+  <path d="M-40 0 Q0 30 40 0 Z" fill="none" stroke="#f0cf7e" stroke-width="3"/>
+  <path d="M0 -4 Q-12 -30 0 -54 Q12 -30 0 -4" fill="#ffd27a"/>
+  <circle cx="0" cy="-30" r="60" fill="#ffcc66" opacity=".12"/>
+ </g>
+ <!-- stars -->
+ <g fill="#f3d58d"><circle cx="140" cy="260" r="2"/><circle cx="930" cy="330" r="2.5"/><circle cx="820" cy="210" r="1.6"/><circle cx="200" cy="470" r="1.8"/><circle cx="980" cy="560" r="1.5"/><circle cx="90" cy="640" r="1.5"/></g>
+ <line x1="380" y1="1050" x2="700" y2="1050" stroke="#7d6431" stroke-width="2"/>
+</svg>
+<div class="tag" style="color:#a8894a">A · काला + सोना</div>
+<div class="top">पाणिनि · पहला सूत्र<small>ASHTADHYAYI · 1.1.1</small></div>
+<div class="card"><div class="sk">वृद्धिरादैच्</div><div class="iast">vṛddhir ādaic</div><div class="hi">आ, ऐ, औ को "वृद्धि" कहते हैं।</div><div class="src">Aṣṭādhyāyī 1.1.1</div></div>
+<div class="sub">पहले ही सूत्र में पाणिनि ने तीन ध्वनियों को <b>एक नाम</b> दे दिया।</div>
+</div>
+
+<!-- ================= B: SHADOW PUPPET ================= -->
+<div class="f" id="B">
+<svg class="bg" viewBox="0 0 1080 1920">
+ <defs>
+  <radialGradient id="lamp" cx=".5" cy=".55" r=".65"><stop offset="0" stop-color="#ffe6a8"/><stop offset=".55" stop-color="#f2a94e"/><stop offset="1" stop-color="#8a3d12"/></radialGradient>
+  <pattern id="chk" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#b5462a"/><circle cx="11" cy="11" r="4" fill="#f2c14e"/></pattern>
+  <pattern id="chk2" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#2f6b4f"/><path d="M0 9 L9 0 L18 9 L9 18Z" fill="#e8b84a"/></pattern>
+  <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+ </defs>
+ <!-- wooden frame + lit screen -->
+ <rect x="40" y="250" width="1000" height="1290" rx="16" fill="#3a1d0c"/>
+ <rect x="70" y="280" width="940" height="1230" fill="url(#lamp)"/>
+ <rect x="70" y="1440" width="940" height="70" fill="#2a1408" opacity=".85"/>
+ <!-- shadow of tree -->
+ <g opacity=".35" filter="url(#soft)"><path d="M850 1400 L870 900 Q760 820 800 720 Q900 640 980 760 Q1040 860 900 900 L910 1400Z" fill="#3b1a08"/></g>
+ <!-- teacher puppet -->
+ <g transform="translate(330,1110)">
+  <path d="M-8 -260 L-8 -420" stroke="#4a2611" stroke-width="5"/>
+  <path d="M-30 -230 L0 -290 L30 -230 Z" fill="#e2a33b" stroke="#3a1d0c" stroke-width="4"/>
+  <circle cx="0" cy="-200" r="40" fill="#c9773b" stroke="#3a1d0c" stroke-width="4"/>
+  <path d="M-10 -170 Q0 -120 10 -170" fill="#f3efe4" stroke="#3a1d0c" stroke-width="3"/>
+  <path d="M-80 -150 L80 -150 L110 120 L-110 120 Z" fill="url(#chk)" stroke="#3a1d0c" stroke-width="5"/>
+  <path d="M-110 120 L110 120 L95 330 L-95 330 Z" fill="#e7c06a" stroke="#3a1d0c" stroke-width="5"/>
+  <path d="M80 -120 L210 -40" stroke="#3a1d0c" stroke-width="16" stroke-linecap="round"/>
+  <path d="M210 -40 L240 -200" stroke="#4a2611" stroke-width="4"/>
+  <rect x="190" y="-70" width="150" height="40" rx="18" fill="#e8d3a2" stroke="#3a1d0c" stroke-width="4" transform="rotate(-12 260 -50)"/>
+ </g>
+ <!-- student puppet -->
+ <g transform="translate(760,1230)">
+  <path d="M0 -190 L0 -330" stroke="#4a2611" stroke-width="5"/>
+  <circle cx="0" cy="-150" r="34" fill="#c9773b" stroke="#3a1d0c" stroke-width="4"/>
+  <path d="M-34 -160 Q0 -205 34 -160" fill="#3a1d0c"/>
+  <path d="M-62 -110 L62 -110 L82 120 L-82 120 Z" fill="url(#chk2)" stroke="#3a1d0c" stroke-width="5"/>
+  <path d="M-82 120 L82 120 L72 290 L-72 290 Z" fill="#f0e2c0" stroke="#3a1d0c" stroke-width="5"/>
+  <path d="M-60 -80 L-150 0" stroke="#3a1d0c" stroke-width="14" stroke-linecap="round"/>
+ </g>
+ <!-- lamp flames under screen -->
+ <g transform="translate(540,1590)"><g fill="#ffb84d"><path d="M-200 0 Q-212 -40 -200 -70 Q-188 -40 -200 0"/><path d="M0 0 Q-12 -40 0 -70 Q12 -40 0 0"/><path d="M200 0 Q188 -40 200 -70 Q212 -40 200 0"/></g><rect x="-260" y="0" width="520" height="16" rx="8" fill="#7a4421"/></g>
+</svg>
+<div class="tag" style="color:#f0c88a">B · छाया-कठपुतली</div>
+<div class="top" style="top:110px">पाणिनि · पहला सूत्र</div>
+<div class="card"><div class="sk">वृद्धिरादैच्</div><div class="iast">vṛddhir ādaic</div><div class="hi">आ, ऐ, औ को "वृद्धि" कहते हैं।</div><div class="src">Aṣṭādhyāyī 1.1.1</div></div>
+<div class="sub">पहले ही सूत्र में पाणिनि ने तीन ध्वनियों को एक नाम दे दिया।</div>
+</div>
+
+<!-- ================= C: FLAT CARTOON ================= -->
+<div class="f" id="C">
+<svg class="bg" viewBox="0 0 1080 1920">
+ <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241a4d"/><stop offset=".6" stop-color="#5b3f8c"/><stop offset="1" stop-color="#e98a6b"/></linearGradient></defs>
+ <rect width="1080" height="1700" fill="url(#sky)"/>
+ <circle cx="820" cy="1000" r="120" fill="#ffd166"/>
+ <path d="M0 1300 Q200 1150 420 1260 Q640 1120 1080 1240 L1080 1700 L0 1700Z" fill="#3d2b6b"/>
+ <path d="M0 1420 Q300 1330 560 1420 Q820 1350 1080 1430 L1080 1700 L0 1700Z" fill="#2a1d4f"/>
+ <!-- banyan tree flat -->
+ <rect x="110" y="1120" width="44" height="320" fill="#1b1236"/>
+ <circle cx="130" cy="1080" r="150" fill="#1f5f4f"/><circle cx="230" cy="1130" r="100" fill="#2a7a64"/><circle cx="50" cy="1140" r="90" fill="#2a7a64"/>
+ <!-- guru -->
+ <g transform="translate(470,1360)">
+  <ellipse cx="0" cy="70" rx="130" ry="34" fill="#c75b39"/>
+  <path d="M-80 70 Q-90 -90 0 -110 Q90 -90 80 70Z" fill="#f2a541"/>
+  <circle cx="0" cy="-160" r="56" fill="#b9774b"/>
+  <path d="M-46 -140 Q0 -40 46 -140 Q30 -100 0 -96 Q-30 -100 -46 -140Z" fill="#f4f1ea"/>
+  <path d="M-56 -175 Q0 -250 56 -175 Q20 -205 -56 -175Z" fill="#f4f1ea"/>
+  <circle cx="-20" cy="-170" r="6" fill="#1b1236"/><circle cx="20" cy="-170" r="6" fill="#1b1236"/>
+  <path d="M70 -20 L170 -60" stroke="#b9774b" stroke-width="26" stroke-linecap="round"/>
+  <rect x="150" y="-100" width="140" height="44" rx="10" fill="#f6e7b8" transform="rotate(-15 220 -78)"/>
+ </g>
+ <!-- student -->
+ <g transform="translate(780,1440)">
+  <ellipse cx="0" cy="40" rx="90" ry="24" fill="#2a9d8f"/>
+  <path d="M-55 40 Q-60 -70 0 -80 Q60 -70 55 40Z" fill="#e9e1cf"/>
+  <circle cx="0" cy="-120" r="44" fill="#b9774b"/>
+  <path d="M-44 -130 Q0 -190 44 -130 Q0 -150 -44 -130Z" fill="#1b1236"/>
+  <circle cx="-15" cy="-118" r="5" fill="#1b1236"/><circle cx="15" cy="-118" r="5" fill="#1b1236"/>
+ </g>
+ <g fill="#fff" opacity=".8"><circle cx="120" cy="240" r="3"/><circle cx="960" cy="200" r="3"/><circle cx="600" cy="900" r="2"/><circle cx="260" cy="880" r="2.5"/></g>
+</svg>
+<div class="tag" style="color:#ffd166">C · सरल कार्टून</div>
+<div class="top" style="top:120px">पाणिनि · पहला सूत्र</div>
+<div class="card"><div class="sk">वृद्धिरादैच्</div><div class="iast">vṛddhir ādaic</div><div class="hi">आ, ऐ, औ को "वृद्धि" कहते हैं।</div><div class="src">अष्टाध्यायी 1.1.1</div></div>
+<div class="sub">पहले ही सूत्र में पाणिनि ने तीन ध्वनियों को <b>एक नाम</b> दे दिया।</div>
+</div>
+
+<!-- ================= D: WATERCOLOUR ================= -->
+<div class="f" id="D">
+<svg class="bg" viewBox="0 0 1080 1920">
+ <defs>
+  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="3"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .45  0 0 0 0 .32  0 0 0 .12 0"/></filter>
+  <filter id="wc" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="4" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="70" result="d"/><feGaussianBlur in="d" stdDeviation="5"/></filter>
+  <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+ </defs>
+ <rect width="1080" height="1920" fill="#f3ead6"/>
+ <rect width="1080" height="1920" filter="url(#paper)"/>
+ <!-- washes -->
+ <g filter="url(#wc)" opacity=".75">
+  <ellipse cx="540" cy="650" rx="430" ry="330" fill="#e8b874"/>
+  <ellipse cx="380" cy="560" rx="230" ry="180" fill="#d98f5c" opacity=".55"/>
+  <ellipse cx="760" cy="760" rx="220" ry="150" fill="#9fb7a4" opacity=".6"/>
+  <ellipse cx="540" cy="930" rx="400" ry="80" fill="#a8774a" opacity=".45"/>
+ </g>
+ <!-- ink drawing: scholar at low desk with manuscript -->
+ <g fill="none" stroke="#2f241b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+  <path d="M250 940 L830 940 M290 940 L290 990 M790 940 L790 990"/>
+  <path d="M360 920 Q540 880 720 920 Q540 950 360 920Z"/>
+  <path d="M400 912 L690 912 M420 925 L670 925" stroke-width="2" opacity=".6"/>
+  <circle cx="540" cy="620" r="52"/>
+  <path d="M500 590 Q540 540 580 590"/>
+  <path d="M540 672 L540 700 M470 712 Q540 690 610 712 L650 880 L430 880 Z"/>
+  <path d="M470 760 Q430 850 470 905 M610 760 Q650 850 610 905"/>
+  <path d="M800 905 Q790 870 800 840 Q812 870 800 905" fill="#c2410c" stroke="#7c2d12"/>
+  <path d="M775 910 Q800 925 825 910"/>
+ </g>
+ <g stroke="#2f241b" stroke-width="2" fill="none" opacity=".5"><path d="M120 1010 Q540 1040 960 1010"/></g>
+</svg>
+<div class="tag" style="color:#8a6e4b">D · वॉटरकलर</div>
+<div class="top">पाणिनि · पहला सूत्र<small>ASHTADHYAYI · 1.1.1</small></div>
+<div class="card"><div class="sk">वृद्धिरादैच्</div><div class="iast">vṛddhir ādaic</div><div class="hi">आ, ऐ, औ को "वृद्धि" कहते हैं।</div><div class="src">Aṣṭādhyāyī 1.1.1</div></div>
+<div class="sub">पहले ही सूत्र में पाणिनि ने तीन ध्वनियों को <b>एक नाम</b> दे दिया।</div>
+</div>
+
+<script>
+const s=new URLSearchParams(location.search).get('s')||'A';
+document.getElementById(s).classList.add('on');
+</script>
+</body></html>
