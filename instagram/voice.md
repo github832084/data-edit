@@ -1,7 +1,7 @@
 # voice.md
 
 Draft written from the Chat 10 reels and plan (Oct 27 – Nov 8, 2026).
-Lines marked {{confirm}} are guesses: check them before relying on this file.
+Confirmed by the owner on Nov 17, 2026. Lines with {{...}} are still empty.
 Every Instagram skill (/ig-reel, /ig-caption, /ig-plan, /ig-story ...) reads this file.
 
 ---
@@ -11,7 +11,7 @@ Every Instagram skill (/ig-reel, /ig-caption, /ig-plan, /ig-story ...) reads thi
 - **Name:** Prof. Harikrushn
 - **Handle:** @prof_harikrushn45
 - **What I do, in one sentence:** I'm a PhD professor of Indian Philosophy who reads Indian Knowledge Systems (IKS) from the original Sanskrit texts and explains them simply, with the source named every time.
-- **Who I am talking to:** Indian students and young adults (roughly 18–35) who see IKS claims in WhatsApp forwards and reels and want to know which ones are actually in the texts. {{confirm}}
+- **Who I am talking to:** Indian students and young adults (roughly 18–35) who see IKS claims in WhatsApp forwards and reels and want to know which ones are actually in the texts.
 - **What I sell:** Nothing right now. The goal is to grow an audience that trusts my sourcing.
 
 ## What I sound like
@@ -51,12 +51,12 @@ Every Instagram skill (/ig-reel, /ig-caption, /ig-plan, /ig-story ...) reads thi
 
 - **On camera I am:** calm, a teacher, plain and exact. Short sentences, one fact per line. Not loud, not hype.
 - **Words I actually use:** the text, the source, the verse, Sanskrit, laghu, guru, sutra, "read it from the text", "where it's written", "WhatsApp forward".
-- **Words I would never say out loud:** "mind-blowing", "secret the West hid", "ancient Indians invented everything", "scientifically proven Vedas", "100% true", "delve", "unlock". {{confirm}}
+- **Words I would never say out loud:** "mind-blowing", "secret the West hid", "ancient Indians invented everything", "scientifically proven Vedas", "100% true", "delve", "unlock".
 - **Do I swear:** no
-- **Emoji in captions:** never {{confirm}}
+- **Emoji in captions:** never
 - **Face on camera:** always for the hook; hands, book pages and a board for the explanation.
 - **Voiceover or to-camera:** to-camera.
-- **Language:** English or Hindi, with Sanskrit terms in Devanagari on screen. {{confirm: which one is the default}}
+- **Language:** Hindi for reels (spoken and captions), with Sanskrit terms in Devanagari on screen.
 - **Pace:** {{time yourself reading a script; most people are 150–200 wpm}}
 
 ## My positions
@@ -69,13 +69,13 @@ Every Instagram skill (/ig-reel, /ig-caption, /ig-plan, /ig-story ...) reads thi
 
 ## Off limits
 
-- **Topics I do not post about:** party politics; attacks on any religion or community. {{confirm}}
-- **Clients, numbers or names I cannot say publicly:** {{confirm: anything about my university or students}}
+- **Topics I do not post about:** party politics; attacks on any religion or community.
+- **Clients, numbers or names I cannot say publicly:** nothing about my university's internal matters or individual students.
 - **Claims I am not allowed to make:** anything I can't point to in a named text and verse. If a reference isn't checked, the reel waits.
 
 ## Proof I can use
 
-- PhD; Professor of Indian Philosophy. {{confirm: university name, years teaching}}
+- PhD; Professor of Indian Philosophy. {{university name and years teaching, if I want them public}}
 - Reads the primary Sanskrit texts directly (Pingala's Chandahshastra, Baudhayana Shulba Sutra, Sushruta Samhita, Panini's Ashtadhyayi).
 - {{your number: e.g. students taught, papers published}}
 
@@ -84,4 +84,4 @@ Every Instagram skill (/ig-reel, /ig-caption, /ig-plan, /ig-story ...) reads thi
 - **My keyword CTA, if I use one:** none yet.
 - **What the keyword sends them:** n/a
 - **Main ask:** "Follow for the source behind every claim."
-- **Where my link goes:** {{confirm}}
+- **Where my link goes:** {{not set yet}}
