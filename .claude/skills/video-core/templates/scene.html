@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>scene</title></head>
+<body>
+<script src="/kit/kit.js"></script>
+<script>
+// Starter scene. Copy to work/<skill>/<job>/scene.html and replace draw().
+// Data comes in via render.cjs --data: k.data.align (align.py), k.data.beats (beats.py), k.data.mouth (mouth.py).
+// Everything must be a pure function of t (no Date, no Math.random, no CSS animation).
+Kit.scene({
+  async setup(k) {
+    await k.fontsource('inter', 'Inter', [400, 800, 900], 'latin');
+    k.ws = k.words(k.data.align);
+    k.cs = k.chunks(k.ws, 3);
+  },
+  duration: (k) => k.data.align.duration,
+  draw(c, t, k) {
+    const { W, H } = k, beats = k.data.beats ? k.data.beats.beats : [];
+    // background + beat pulse
+    const pulse = k.beatPulse(beats, t);
+    c.fillStyle = '#1b1530'; c.fillRect(0, 0, W, H);
+    k.speedLines(c, W / 2, H * 0.42, 70, Math.min(W, H) * 0.32, Math.hypot(W, H), `rgba(255,255,255,${0.06 + pulse * 0.1})`, t);
+    // a simple lip-synced character: head, blinking eyes, mouth from the voice
+    const [sx, sy] = k.shake(t, 10, (k.ws.find(w => /boom/i.test(w.w)) || { end: -1 }).end + 0.25);
+    c.save(); c.translate(W / 2 + sx, H * 0.42 + sy + Math.sin(t * 2) * 6);
+    const R = Math.min(W, H) * 0.2;
+    c.fillStyle = '#ffd7b0'; c.strokeStyle = '#111'; c.lineWidth = R * 0.05;
+    c.beginPath(); c.arc(0, 0, R, 0, 7); c.fill(); c.stroke();
+    const bl = k.blink(t, 4);
+    for (const ex of [-0.38, 0.38]) { c.fillStyle = '#fff'; c.beginPath(); c.ellipse(ex * R, -0.15 * R, 0.2 * R, 0.24 * R * (1 - bl), 0, 0, 7); c.fill(); c.stroke();
+      if (bl < 0.6) { c.fillStyle = '#3a2a7a'; c.beginPath(); c.arc(ex * R, -0.12 * R, 0.11 * R, 0, 7); c.fill(); } }
+    const m = k.mouth(k.data.mouth && k.data.mouth.main, t);
+    c.fillStyle = '#5a1020'; c.beginPath(); c.ellipse(0, 0.45 * R, 0.26 * R, 0.03 * R + m * 0.22 * R, 0, 0, 7); c.fill(); c.stroke();
+    c.restore();
+    // a burst on any word "boom"
+    const boom = k.ws.find(w => /boom/i.test(w.w));
+    if (boom && t >= boom.start && t < boom.start + 0.9) {
+      const p = k.ease.outBack(k.prog(t, boom.start, boom.start + 0.18));
+      k.burst(c, W * 0.78, H * 0.2, Math.min(W, H) * 0.14 * p, { text: 'BOOM!', font: `900 ${Math.min(W, H) * 0.07}px Inter`, seed: 3 });
+    }
+    // karaoke caption chunk, inside the 9:16 safe zone
+    const ci = k.chunkAt(k.cs, t);
+    if (ci >= 0) k.caption(c, k.cs[ci], t, { font: `900 ${Math.round(Math.min(W, H) * 0.075)}px Inter`, hi: '#ffd400', upper: true, cy: k.vertical ? H - k.SAFE.bottom - 80 : H * 0.84 });
+    k.vignette(c, 0.5); k.grain(c, t, 0.06);
+  },
+});
+</script>
+</body></html>

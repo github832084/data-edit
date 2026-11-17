@@ -1,0 +1,4 @@
+{ "from": { "name": "Bengaluru", "lon": 77.5946, "lat": 12.9716 },
+  "to":   { "name": "California", "lon": -119.4179, "lat": 36.7783 },
+  "title": "Bengaluru → California",
+  "seconds": 14 }

@@ -1,0 +1,10 @@
+# Media and working files stay out of git
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.m4a
+*.mp3
+.work/
+node_modules/
