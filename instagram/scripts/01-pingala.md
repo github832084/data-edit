@@ -1,4 +1,4 @@
-# Video 1 · पिंगल और binary · script draft v1 · Nov 17, 2026
+# Video 1 · पिंगल और binary · script v2 · Nov 19, 2026
 
 - **Format:** long vertical Reel, 9:16, style A (gold line art on black)
 - **Language:** Hindi narration and captions; Sanskrit on screen in Devanagari, with IAST and source
@@ -13,6 +13,7 @@
 | 2 | The counting rules are in chapter 8: द्विरर्धे । रूपे शून्यम् । द्विः शून्ये । तावदर्धे तद्गुणितम् । (usually numbered 8.28–8.31) | Ch. 8 |
 | 3 | Pingala's order of the 3-syllable patterns begins with all-guru (ग ग ग) | prastara, Ch. 8 |
 | 4 | Halayudha's commentary Mritasanjivani (10th century) explains the मेरु-प्रस्तार triangle | commentary on Ch. 8 (sutra 8.34 in many editions) |
+| 6 | Computers still compute large powers by repeated squaring ("exponentiation by squaring"), the same halve-and-square idea | any algorithms textbook |
 | 5 | Leibniz published his binary paper in 1703 ("Explication de l'Arithmétique Binaire") | Mémoires de l'Académie Royale des Sciences, 1703 |
 
 ## Script
@@ -23,16 +24,15 @@ Timings are rough. **[SCENE]** is what is seen on screen, and **ON SCREEN** is t
 
 ### 0 · Hook (0:00–0:15)
 
-**[SCENE]** Black screen. One gold dot. It splits into two, two into four, four into eight.
+**[SCENE]** A phone screen full of 0 and 1. It dissolves into a palm-leaf manuscript.
 
-एक कवि छंद गिन रहा था।
-और गिनते-गिनते उसने वह तरीका लिख दिया,
-जिससे आज आपका फ़ोन चलता है।
+आपका फ़ोन सिर्फ़ दो अंक जानता है: 0 और 1।
+गिनती का यही तरीका, दो हज़ार साल पहले एक संस्कृत ग्रंथ में लिखा गया था।
+कविता की लय गिनने के लिए।
 
 **ON SCREEN:** 0 1
 **[SCENE]** Title in gold: पिंगल · छन्दःशास्त्र
 
-ये बात दो हज़ार साल से भी पुरानी है।
 पर मैं आपको सिर्फ़ कहानी नहीं सुनाऊँगा।
 मैं आपको वह सूत्र दिखाऊँगा, जहाँ यह लिखा है।
 
@@ -42,8 +42,8 @@ Timings are rough. **[SCENE]** is what is seen on screen, and **ON SCREEN** is t
 
 **[SCENE]** Seated scholar under a moon, palm-leaf manuscript, oil lamp. Line-art draws itself in.
 
-पिंगल का काम था छंद।
-यानी कविता की लय।
+पिंगल ने छंदों पर एक ग्रंथ लिखा: छन्दःशास्त्र।
+छंद यानी कविता की लय।
 वेदों में भी, बाद की कविता में भी, हर पंक्ति एक तय ढाँचे में चलती है।
 
 **[SCENE]** The Gayatri line appears syllable by syllable, each syllable a gold bead.
@@ -67,7 +67,7 @@ Timings are rough. **[SCENE]** is what is seen on screen, and **ON SCREEN** is t
 कुछ भारी होते हैं। उन्हें गुरु कहते हैं।
 जैसे "का"।
 
-दीर्घ स्वर हो, तो अक्षर गुरु।
+जिस अक्षर में दीर्घ स्वर हो, वह गुरु है।
 और अगर अक्षर के बाद संयुक्त अक्षर आए, तब भी वह गुरु बन जाता है।
 
 यानी हर अक्षर के सिर्फ़ दो रूप हैं।
@@ -77,7 +77,7 @@ Timings are rough. **[SCENE]** is what is seen on screen, and **ON SCREEN** is t
 **[SCENE]** The two beads turn into ल and ग.
 
 अब पिंगल ने एक सवाल पूछा।
-अगर मेरे पास तीन अक्षर हैं,
+अगर किसी पंक्ति में सिर्फ़ तीन अक्षर हों,
 तो कितने अलग-अलग छंद बन सकते हैं?
 
 ---
@@ -150,7 +150,7 @@ dvir ardhe · rūpe śūnyam · dviḥ śūnye · tāvad ardhe tad guṇitam
 
 अब उल्टा चलिए। एक से शुरू कीजिए।
 जहाँ "शून्य" है, वहाँ दुगना कीजिए।
-जहाँ "अर्ध" है, वहाँ उसी संख्या से गुणा कीजिए।
+जहाँ "अर्ध" है, वहाँ संख्या का वर्ग कीजिए, यानी उसे उसी से गुणा कीजिए।
 
 **ON SCREEN:** 1 → 2 → 4 → 8 → 64
 
@@ -167,7 +167,7 @@ dvir ardhe · rūpe śūnyam · dviḥ śūnye · tāvad ardhe tad guṇitam
 
 यहाँ एक बात साफ़ कर दूँ।
 इस सूत्र में "शून्य" एक निशान है, आज वाला अंक 0 नहीं।
-पर इसमें गिनती का जो ढाँचा है, वह बहुत आधुनिक है।
+और मज़े की बात: बड़ी घातें निकालने के लिए आज के computer भी यही "आधा करो, वर्ग करो" वाला तरीका इस्तेमाल करते हैं।
 
 ---
 
