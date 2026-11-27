@@ -112,3 +112,31 @@ Copied unmodified from [Jakeschincariol/instagram-agent-skill](https://github.co
 Nothing is posted, commented or sent for you; every skill ends in copy-ready text.
 The skills share `~/.claude/instagram/` (`voice.md`, `swipe.md`, `plan.md`, `log.md`). The voice template is in `ig-reel/templates/voice.md`.
 In a cloud session that folder is lost when the session ends, so keep your filled-in `voice.md` in the repo and copy it there at the start.
+
+## Mythology animation styles (7 skills, added Nov 27, 2026)
+
+Supplied by the owner. Each turns a Hindi/English mythology voiceover into a 9:16 animated reel in one visual style.
+
+| Skill | Look | Built here in code? |
+|---|---|---|
+| mythology-folk-scroll | Indian folk story-scroll (Pattachitra-like), profile figures, borders | yes |
+| mythology-cutout-puppets | articulated paper-puppet characters, palace interiors | yes |
+| mythology-luminous-diorama | 2.5D temple diorama, lamps, arches, gold light | yes |
+| mythology-painterly-storybook | semi-realistic illustrated epic | needs a strong image model |
+| mythology-cinematic-cel | cel-shaded heroic action | needs a strong image/video model |
+| mythology-chibi-cartoon | simple big-head cartoon | yes |
+| mythology-pixel-art | 16-bit pixel art, chiptune | yes |
+
+## Third-party video skills (added Nov 27, 2026)
+
+Copied from public GitHub repos; each folder keeps its upstream LICENSE.
+
+| Skill | Source | License | Notes |
+|---|---|---|---|
+| lemo-opuscar | lemomo-ai/lemo-opuscar | code MIT, docs CC BY-NC 4.0; films you make are yours | 99 code-made film styles (e.g. Archive Light Table, Gilded Illumination). `scripts/setup.sh` clones the style library to `~/lemo-opuscar` on first use |
+| anidoodle | alexgreensh/anidoodle | Apache 2.0 (see NOTICE) | 32 hand-drawn styles drawn in code, drawing timelapses, code-composed music |
+| huashu-art-motion | alchaincyf/huashu-art-motion | MIT | 36 art styles, 9 explainer grammars; instructions mostly in Chinese; showcase media left out |
+| vox-director | alisa0808/vox-director | MIT | Vox paper-collage explainers; needs the paid Atlas Cloud API; showcase videos left out |
+| brag, brag-slim | latent-spaces/brag | MIT | launch videos for software projects |
+
+Manim (3b1b/manim, MIT) is a Python animation library, not a skill; install it when a math scene needs it.
